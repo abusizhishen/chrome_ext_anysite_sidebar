@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "manifest_version": 3,
   "description": "",
-    "background": {
+  "background": {
     "service_worker": "background.js"
   },
   "permissions": [
@@ -12,25 +12,25 @@
     "webRequest",
     "sidePanel",
     "declarativeNetRequestWithHostAccess",
-
     "contextMenus",
-    "storage"
-
+    "storage",
+    "scripting",
+    "windows"
   ],
-"declarative_net_request": {
-  "rule_resources": [{
-    "id": "csp_rules",
-    "enabled": true,
-    "path": "rules.json"
-  }]
-},
-
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "csp_rules",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup/popup.html"
   },
   "side_panel": {
-    "default_path": "sidepanel.html",
-    "open": "chrome.action"
+    "default_path": "sidepanel/sidepanel.html"
   },
   "web_accessible_resources": [
     {

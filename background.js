@@ -1,21 +1,48 @@
 // background.js
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({
-    id: "openSidebar",
-    title: "打开自定义侧边栏",
-    contexts: ["page"]
-  });
+    chrome.contextMenus.create({
+        id: "openSidebar",
+        title: "侧边栏打开",
+        contexts: ["page"]
+    });
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === "openSidebar") {
-    // 读取之前存储的自定义地址，如果没有则使用默认侧边栏页面
-    chrome.storage.local.get("customSidebarUrl", (data) => {
-      let url = data.customSidebarUrl || "sidepanel.html";
-      chrome.sidePanel.setOptions({ path: url }, () => {
-        console.log("通过右键菜单更新侧边栏地址为:", url);
-      });
-    });
-  }
+    if (info.menuItemId === "openSidebar") {
+        console.log(info)
+        openSidePanel(info.pageUrl)
+    }
 });
 
+chrome.runtime.onMessage.addListener((message, sender, response) => {
+    console.log('got message', message)
+    const {action, url} = message
+    if (action === "updateSidebar") {
+        openSidePanel(url)
+    } else if (action === "getCurrentUrl") {
+        chrome.storage.local.get('currentUrl', (val) => {
+            response(val.currentUrl)
+        });
+        return true
+    }
+});
+
+function openSidePanel(url) {
+
+    if (!url.startsWith('http')) {
+        url = url.includes('://') ? url : `https://${url}`;
+        url = url.replace(/^(http:\/\/)?/, 'https://');
+        e.target.value = url;
+    }
+
+    if (!url) {
+        console.log("url is empty")
+        return
+    }
+
+
+    chrome.storage.local.set({currentUrl: url});
+    chrome.windows.getCurrent({populate: true}, (window) => {
+        chrome.sidePanel.open({windowId: window.id});
+    });
+}
