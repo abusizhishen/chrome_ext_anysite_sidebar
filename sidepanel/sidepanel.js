@@ -1,17 +1,3 @@
-let isResizing = false;
-
-document.addEventListener('mousemove', (e) => {
-    if (isResizing) {
-        const newWidth = window.innerWidth - e.clientX + 10;
-        document.documentElement.style.width = `${newWidth}px`;
-    }
-});
-
-document.addEventListener('mouseup', () => {
-    isResizing = false;
-    document.documentElement.style.cursor = 'auto';
-});
-
 // 监听存储变化
 chrome.storage.onChanged.addListener((changes) => {
     if (changes.currentUrl) {
@@ -19,13 +5,30 @@ chrome.storage.onChanged.addListener((changes) => {
     }
 });
 
+const iframe = document.getElementById('webview');
+
 // 初始化加载
 chrome.storage.local.get('currentUrl', ({currentUrl}) => {
-    const iframe = document.getElementById('webview');
-    iframe.src = currentUrl || 'https://example.com';
+    console.log('currentUrl', currentUrl);
+    if (currentUrl) {
+        console.log('hide input');
+        iframe.src = currentUrl;
+        iframe.style.display = 'block';
+        keywordOrUrl.style.display = 'none'
+        iframe.style.visibility = 'true';
+    } else {
+        console.log('hide iframe');
+        iframe.style.visibility = 'false';
+    }
 
-    // 动态调整高度
-    iframe.onload = () => {
-        iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-    };
 });
+
+const keywordOrUrl = document.getElementById('keywordOrUrl');
+keywordOrUrl.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        console.log('Enter key pressed');
+        // Place your custom code here
+        const url = event.target.value
+        if (iframe.src !== url) iframe.src = url;
+    }
+})

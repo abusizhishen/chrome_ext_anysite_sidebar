@@ -26,6 +26,7 @@
       }
     ]
   },
+  "action": {},
   "side_panel": {
     "default_path": "sidepanel/sidepanel.html"
   },

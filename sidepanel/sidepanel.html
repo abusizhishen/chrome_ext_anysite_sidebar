@@ -3,21 +3,37 @@
     <title>Side Panel</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script src="sidepanel.js"></script>
     <style>
         #container {
             display: flex;
             flex-direction: column;
             height: 100%;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .header {
+            width: 90%;
         }
     </style>
 </head>
 <body>
 <div id="container">
-    <label>
-        <input type="text" class="form-control" placeholder="address" style="margin: 10px auto">
-    </label>
+    <div class="header">
+        <!--        <select class="form-control col-2" id="engine">-->
+        <!--            <option>google</option>-->
+        <!--            <option>bing</option>-->
+        <!--            <option>google</option>-->
+        <!--            <option>360</option>-->
+        <!--            <option>yandex</option>-->
+        <!--        </select>-->
+        <input type="text" id="keywordOrUrl" class="form-control" placeholder="search or enter url"
+               style="margin: 10px auto">
+    </div>
     <iframe id="webview" width="100%" height="100%"></iframe>
+
+    <script src="sidepanel.js"></script>
 </div>
 </body>
 </html>

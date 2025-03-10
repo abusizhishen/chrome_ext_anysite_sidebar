@@ -7,6 +7,11 @@ chrome.runtime.onInstalled.addListener(() => {
     });
 });
 
+chrome.action.onClicked.addListener((tab) => {
+    console.log('action clicked', tab);
+    openSidePanel('',)
+})
+
 chrome.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "openSidebar") {
         console.log(info)
@@ -29,18 +34,14 @@ chrome.runtime.onMessage.addListener((message, sender, response) => {
 
 function openSidePanel(url, tab) {
 
-    if (!url.startsWith('http')) {
+    if (url && !url.startsWith('http')) {
         url = url.includes('://') ? url : `https://${url}`;
         url = url.replace(/^(http:\/\/)?/, 'https://');
-        e.target.value = url;
-    }
 
-    if (!url) {
-        console.log("url is empty")
-        return
     }
-
     chrome.storage.local.set({currentUrl: url});
+    console.log(url)
+
 
     if (tab) {
         chrome.sidePanel.open({windowId: tab.windowId})
@@ -50,3 +51,4 @@ function openSidePanel(url, tab) {
         });
     }
 }
+
