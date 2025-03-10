@@ -1,11 +1,23 @@
 <html lang="zh-cn">
 <head>
     <title>Side Panel</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <script src="sidepanel.js"></script>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
-<input type="text" placeholder="" style="margin: 10px auto">
-<iframe id="webview" width="100%" height="100%"></iframe>
+<div id="container">
+    <label>
+        <input type="text" class="form-control" placeholder="address" style="margin: 10px auto">
+    </label>
+    <iframe id="webview" width="100%" height="100%"></iframe>
+</div>
 </body>
 </html>

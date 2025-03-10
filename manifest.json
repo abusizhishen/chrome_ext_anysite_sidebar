@@ -1,5 +1,5 @@
 {
-  "name": "任意网站侧边栏",
+  "name": "side panel with any page",
   "version": "1.0.0",
   "manifest_version": 3,
   "description": "",
@@ -25,9 +25,6 @@
         "path": "rules.json"
       }
     ]
-  },
-  "action": {
-    "default_popup": "popup/popup.html"
   },
   "side_panel": {
     "default_path": "sidepanel/sidepanel.html"
