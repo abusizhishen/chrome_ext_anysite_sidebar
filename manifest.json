@@ -34,17 +34,6 @@
   "side_panel": {
     "default_path": "sidepanel/sidepanel.html"
   },
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "source/*",
-        "script/*"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    }
-  ],
   "host_permissions": [
     "*://*/*"
   ]
