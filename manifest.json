@@ -8,15 +8,10 @@
     "service_worker": "js/background.js"
   },
   "permissions": [
-    "tabs",
-    "activeTab",
-    "webRequest",
     "sidePanel",
     "declarativeNetRequestWithHostAccess",
     "contextMenus",
-    "storage",
-    "scripting",
-    "windows"
+    "storage"
   ],
   "declarative_net_request": {
     "rule_resources": [
