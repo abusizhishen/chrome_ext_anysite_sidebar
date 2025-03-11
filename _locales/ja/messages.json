@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "サイドバー"
+  },
+  "description": {
+    "message": "サイドバーで任意のウェブページを開く"
+  },
+  "urlInputPlaceholder": {
+    "message": "URL..."
+  },
+  "openInSidePanel": {
+    "message": "サイドバーで開く"
+  }
+}

@@ -38,4 +38,4 @@ chrome.runtime.sendMessage({action: "getCurrentUrl"}, (res) => {
     urlInput.value = res || ''
 })
 
-const input = document.getElementById('input')
+const url = document.getElementById('input')

@@ -1,10 +1,11 @@
 {
-  "name": "side panel with any page",
+  "name": "__MSG_name__",
+  "default_locale": "en",
   "version": "1.0.0",
   "manifest_version": 3,
-  "description": "",
+  "description": "__MSG_description__",
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "js/background.js"
   },
   "permissions": [
     "tabs",
@@ -25,6 +26,14 @@
         "path": "rules.json"
       }
     ]
+  },
+  "icons": {
+    "16": "assets/icon.png",
+    "24": "assets/icon.png",
+    "32": "assets/icon.png",
+    "48": "assets/icon.png",
+    "96": "assets/icon.png",
+    "128": "assets/icon.png"
   },
   "action": {},
   "side_panel": {

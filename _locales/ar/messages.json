@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "الشريط الجانبي"
+  },
+  "description": {
+    "message": "افتح أي صفحة ويب في الشريط الجانبي"
+  },
+  "urlInputPlaceholder": {
+    "message": "URL..."
+  },
+  "openInSidePanel": {
+    "message": "فتح في الشريط الجانبي"
+  }
+}

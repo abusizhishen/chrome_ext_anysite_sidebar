@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "側邊欄"
+  },
+  "description": {
+    "message": "側邊欄開啟任意網頁"
+  },
+  "urlInputPlaceholder": {
+    "message": "網址..."
+  },
+  "openInSidePanel": {
+    "message": "側邊欄打開"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "Sidebar"
+  },
+  "description": {
+    "message": "Open any web page in the sidebar"
+  },
+  "urlInputPlaceholder": {
+    "message": "url..."
+  },
+  "openInSidePanel": {
+    "message": "Open in side panel"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "Barre latérale"
+  },
+  "description": {
+    "message": "Ouvrez n'importe quelle page web dans la barre latérale"
+  },
+  "urlInputPlaceholder": {
+    "message": "URL..."
+  },
+  "openInSidePanel": {
+    "message": "Ouvrir dans la barre latérale"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": {
+    "message": "侧边栏"
+  },
+  "description": {
+    "message": "侧边栏打开任意网页"
+  },
+  "urlInputPlaceholder": {
+    "message": "网址..."
+  },
+  "openInSidePanel": {
+    "message": "侧边栏打开"
+  }
+}
