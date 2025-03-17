@@ -55,7 +55,7 @@ goButton.addEventListener('click', () => {
     go(urlInput.value);
 })
 
-function go(url) {
+async function go(url) {
     if (url) {
         const startWithHttp = url.indexOf('http') === 0
         console.log('start with http: ', startWithHttp)

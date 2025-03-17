@@ -1,4 +1,6 @@
 // background.js
+importScripts('rule.js');
+
 chrome.runtime.onInstalled.addListener(() => {
     chrome.contextMenus.create({
         id: "openSidebar",
@@ -45,4 +47,3 @@ function openSidePanel(url, tab) {
         })
     }
 }
-
