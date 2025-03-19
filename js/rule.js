@@ -7,8 +7,8 @@ const createCspRule = (extensionId) => ({
     responseHeaders: [
       {
         header: "Content-Security-Policy",
-        operation: "set",
-        value: `frame-ancestors 'self' chrome-extension://${extensionId}`
+        operation: "remove",
+        // value: `frame-ancestors 'self' chrome-extension://${extensionId}`
       },
       { header: "X-Frame-Options", operation: "remove" }
     ]
@@ -33,7 +33,7 @@ chrome.runtime.onInstalled.addListener(async () => {
 
 // 运行时获取状态
 chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
-  if (msg.type === 'get-frame-policy') {
+  if (msg.type === 'updateRule') {
     sendResponse({
       csp: `frame-ancestors 'self' chrome-extension://${chrome.runtime.id}`
     });
